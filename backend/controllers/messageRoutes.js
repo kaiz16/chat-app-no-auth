@@ -11,11 +11,11 @@ router.get('/', async (req, res) => {
 
 // send new message
 router.post('/create', async (req, res) => {
-    let { message, username } = req.body
+    let { text, username } = req.body
     try {
         let newMessage = new Messages({
             username: username,
-            message: message
+            text: text
         })
 
         newMessage.save()
